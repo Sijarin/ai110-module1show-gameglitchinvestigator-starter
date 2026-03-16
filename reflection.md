@@ -4,16 +4,15 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 ## 1. What was broken when you started?
 
-- What did the game look like the first time you ran it?
-- List at least two concrete bugs you noticed at the start  
-  (for example: "the secret number kept changing" or "the hints were backwards").
+- It didn't seem to have major error except logic error.
+-  the hints were opposite and it gives one less attempt.
 
 ---
 
 ## 2. How did you use AI as a teammate?
 
-- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
-- Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+- I used Claude.
+- I prompted claude the problem after i had fixed the go higher go lower issue. I tested it again but there was still some issue so we fixed a bug where the game was secretly converting the secret number to a string on every even attempt (2nd, 4th, 6th guess, etc.). I manually tested it to be correct.
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
 ---
