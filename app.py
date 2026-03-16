@@ -55,7 +55,7 @@ def update_score(current_score: int, outcome: str, attempt_number: int):
             points = 10
         return current_score + points
 
-#error  not penalizing the player.
+#error  not penalizing the player
     if outcome == "Too High":
         return current_score - 5
 
@@ -108,7 +108,7 @@ if "history" not in st.session_state:
 st.subheader("Make a guess")
 
 st.info(
-    f"Guess a number between 1 and 100. "
+    f"Guess a number between {low} and {high}. "
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
 )
 
