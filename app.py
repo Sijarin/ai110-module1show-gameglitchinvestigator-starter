@@ -34,17 +34,18 @@ def check_guess(guess, secret):
         return "Win", "🎉 Correct!"
 
     try:
+        #Swapped logic
         if guess > secret:
-            return "Too High", "📈 Go HIGHER!"
+            return "Too High", " Go Lower!"
         else:
-            return "Too Low", "📉 Go LOWER!"
+            return "Too Low", " Go Higher!"
     except TypeError:
         g = str(guess)
         if g == secret:
             return "Win", "🎉 Correct!"
         if g > secret:
-            return "Too High", "📈 Go HIGHER!"
-        return "Too Low", "📉 Go LOWER!"
+            return "Too High", " Go Lower!"
+        return "Too Low", " Go Higher!"
 
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
@@ -92,8 +93,9 @@ st.sidebar.caption(f"Attempts allowed: {attempt_limit}")
 if "secret" not in st.session_state:
     st.session_state.secret = random.randint(low, high)
 
+#It causes the attempts to be off by one.
 if "attempts" not in st.session_state:
-    st.session_state.attempts = 1
+    st.session_state.attempts = 0
 
 if "score" not in st.session_state:
     st.session_state.score = 0
@@ -155,10 +157,7 @@ if submit:
     else:
         st.session_state.history.append(guess_int)
 
-        if st.session_state.attempts % 2 == 0:
-            secret = str(st.session_state.secret)
-        else:
-            secret = st.session_state.secret
+        secret = st.session_state.secret
 
         outcome, message = check_guess(guess_int, secret)
 
